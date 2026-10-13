@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Patna Population Analysis | GHSL 2000–2020</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:"Segoe UI",Arial,sans-serif;background:#f4f7fb;color:#243447;line-height:1.6}
+.hero{background:linear-gradient(135deg,#4527a0,#1565c0,#00897b);color:white;padding:55px 20px 48px;text-align:center}
+.hero h1{margin:0 0 10px;font-size:42px}.hero p{margin:7px auto;max-width:850px;font-size:18px}.badge{display:inline-block;margin-top:18px;padding:8px 18px;border-radius:30px;background:#ffffff2e;border:1px solid #ffffff59;font-weight:600}
+.nav{position:sticky;top:0;z-index:10;background:white;box-shadow:0 2px 12px #00000014;padding:12px 10px;text-align:center}.nav a{color:#3949ab;text-decoration:none;font-weight:600;margin:0 12px;font-size:14px}
+.container{max-width:1150px;margin:auto;padding:30px 20px 60px}.intro{background:white;border-left:6px solid #00897b;padding:22px 25px;border-radius:12px;box-shadow:0 4px 18px #0000000f;margin-bottom:28px}
+h2{color:#263b80;margin-top:0;font-size:27px}.section{background:white;margin:28px 0;padding:28px;border-radius:16px;box-shadow:0 5px 20px #23325014}
+.section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}.number{width:38px;height:38px;border-radius:50%;background:linear-gradient(135deg,#5e35b1,#1e88e5);color:white;display:inline-flex;align-items:center;justify-content:center;font-weight:bold}
+.map-frame{width:100%;height:650px;border:0;border-radius:12px;box-shadow:0 3px 12px #0000001f}.gif-box{text-align:center;background:#eef4ff;padding:18px;border-radius:14px}.gif-box img{max-width:100%;border-radius:10px;box-shadow:0 4px 15px #00000026}.caption{color:#607080;font-size:14px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin:20px 0 5px}.stat{padding:20px;border-radius:14px;color:white;min-height:125px}.stat:nth-child(1){background:linear-gradient(135deg,#3949ab,#5e35b1)}.stat:nth-child(2){background:linear-gradient(135deg,#00897b,#43a047)}.stat:nth-child(3){background:linear-gradient(135deg,#ef6c00,#f9a825)}.stat:nth-child(4){background:linear-gradient(135deg,#c62828,#e53935)}.stat .label{font-size:14px;opacity:.9}.stat .value{font-size:27px;font-weight:700;margin-top:7px}
+table{width:100%;border-collapse:collapse;margin-top:18px;overflow:hidden;border-radius:10px}th{background:#3949ab;color:white;padding:13px}td{padding:12px;text-align:center;border-bottom:1px solid #e4e8ef}tr:nth-child(even){background:#f4f7ff}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:25px}.highlight{background:#e8f5e9;border-left:5px solid #43a047;padding:17px 20px;border-radius:9px}
+.method-card{background:#f7f5ff;border:1px solid #ddd5ff;padding:18px;border-radius:12px;margin-bottom:12px}.method-card strong{color:#4527a0}.limitation{background:#fff8e1;border-left:5px solid #f9a825;padding:17px 20px;border-radius:9px}.source{background:#eef6ff;padding:18px 22px;border-radius:12px}
+footer{background:#1f2937;color:#dbe4ee;text-align:center;padding:28px 15px;margin-top:30px}footer strong{color:white}
+@media(max-width:800px){.hero h1{font-size:31px}.stats{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.nav a{display:inline-block;margin:4px 7px}.map-frame{height:520px}}
+@media(max-width:500px){.stats{grid-template-columns:1fr}.section{padding:20px}}
+</style>
+</head>
+<body>
+<header class="hero">
+<h1>Patna Population Analysis</h1>
+<p>Residential Population Distribution and Change, 2000–2020</p>
+<p><strong>GHSL Population Dataset | 100 m Resolution | 5-Year Intervals</strong></p>
+<div class="badge">Urban Informatics • IIT Tirupati</div>
+</header>
+
+<nav class="nav">
+<a href="#maps">Maps</a><a href="#animation">Animation</a><a href="#change">Change</a><a href="#totals">Population</a><a href="#discussion">Discussion</a><a href="#sources">Sources</a>
+</nav>
+
+<main class="container">
+<div class="intro">
+<h2>Study Overview</h2>
+<p>This study examines how residential population was distributed across Patna and how the population changed between 2000 and 2020. Google Earth Engine and the Global Human Settlement Layer (GHSL) Population dataset were used to analyse population at 5-year intervals.</p>
+</div>
+
+<section class="section" id="maps">
+<div class="section-title"><span class="number">1</span><h2>Population Distribution Maps</h2></div>
+<p>Use the layer control on the map to switch between population distribution for 2000, 2005, 2010, 2015 and 2020. The same colour scale is used across the years for comparison.</p>
+<iframe class="map-frame" src="Patna_population_maps.html"></iframe>
+</section>
+
+<section class="section" id="animation">
+<div class="section-title"><span class="number">2</span><h2>Population Animation: 2000–2020</h2></div>
+<div class="gif-box"><img src="Patna_population_2000_2020.gif" alt="Patna population animation"><div class="caption">Five-year population distribution sequence from 2000 to 2020.</div></div>
+</section>
+
+<section class="section" id="change">
+<div class="section-title"><span class="number">3</span><h2>Population Change Map</h2></div>
+<p>This map represents the difference in population between 2000 and 2020. Positive values indicate population increase, while negative values indicate population decline.</p>
+<iframe class="map-frame" src="Patna_change_map.html"></iframe>
+</section>
+
+<section class="section" id="totals">
+<div class="section-title"><span class="number">4</span><h2>Population Totals & Trend</h2></div>
+<div class="stats">
+<div class="stat"><div class="label">Population in 2000</div><div class="value">1.75 M</div></div>
+<div class="stat"><div class="label">Population in 2020</div><div class="value">2.51 M</div></div>
+<div class="stat"><div class="label">Absolute Increase</div><div class="value">759,100</div></div>
+<div class="stat"><div class="label">Percentage Increase</div><div class="value">43.42%</div></div>
+</div>
+<table>
+<tr><th>Year</th><th>Estimated Population</th></tr>
+<tr><td>2000</td><td>1,748,350</td></tr>
+<tr><td>2005</td><td>1,948,444</td></tr>
+<tr><td>2010</td><td>2,139,269</td></tr>
+<tr><td>2015</td><td>2,326,667</td></tr>
+<tr><td>2020</td><td>2,507,450</td></tr>
+</table>
+<h3>Population Trend</h3>
+<img src="Patna_population_trend.png" alt="Population trend in Patna" style="width:100%;max-width:850px;display:block;margin:auto;">
+</section>
+
+<section class="section" id="discussion">
+<div class="section-title"><span class="number">5</span><h2>Discussion</h2></div>
+<div class="highlight"><strong>Key finding:</strong> Patna's estimated population increased from 1,748,350 in 2000 to 2,507,450 in 2020, representing an overall increase of 759,100 people or 43.42%.</div>
+<div class="two-col" style="margin-top:22px">
+<div><h3>Spatial Pattern</h3><p>The maps show that population is concentrated in the residential and built-up portions of Patna. The spatial distribution can be compared across the five-year intervals to identify areas where population concentration increased.</p></div>
+<div><h3>Temporal Pattern</h3><p>The population increased consistently across all five-year observations: 2000, 2005, 2010, 2015 and 2020. The animation provides a visual representation of this change over time.</p></div>
+</div>
+</section>
+
+<section class="section">
+<div class="section-title"><span class="number">6</span><h2>Methodology</h2></div>
+<div class="method-card"><strong>Boundary:</strong> Patna urban local body boundary obtained from the Indian urban administrative boundaries dataset.</div>
+<div class="method-card"><strong>Population dataset:</strong> JRC Global Human Settlement Layer (GHSL) Population, GHS_POP, at 100 m resolution.</div>
+<div class="method-card"><strong>Study period:</strong> 2000, 2005, 2010, 2015 and 2020.</div>
+<div class="method-card"><strong>Platform:</strong> Google Earth Engine with Python and geospatial visualization using Folium.</div>
+</section>
+
+<section class="section">
+<div class="section-title"><span class="number">7</span><h2>Limitations</h2></div>
+<div class="limitation"><ul><li>GHSL provides gridded population estimates rather than household-level observations.</li><li>The analysis depends on the selected Patna administrative boundary.</li><li>Population estimates may differ from official census totals because of differences in data sources and estimation methods.</li><li>A 100 m grid represents population spatially but does not imply that population is evenly distributed within each cell.</li></ul></div>
+</section>
+
+<section class="section" id="sources">
+<div class="section-title"><span class="number">8</span><h2>Data Sources</h2></div>
+<div class="source">
+<p><strong>GHSL Population:</strong> JRC Global Human Settlement Layer, GHS_POP, 2000–2020.</p>
+<p><strong>Administrative Boundary:</strong> Indian urban local body boundary dataset from the Indian Administrative Boundaries repository.</p>
+<p><strong>Analysis Platform:</strong> Google Earth Engine.</p>
+</div>
+</section>
+</main>
+
+<footer><strong>Patna Population Analysis</strong><br>Urban Informatics • IIT Tirupati<br>GHSL Population Analysis, 2000–2020</footer>
+</body>
+</html>
